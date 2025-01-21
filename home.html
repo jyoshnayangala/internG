@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ecdac0;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: rgba(2, 113, 106, 255);
+            padding: 10px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            font-size: 18px;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(2, 113, 106, 0.8);
+            border-radius: 5px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-icon img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        /* First Section */
+        .first-section {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px;
+        }
+
+        .notification-box {
+            width: 50%;
+            height: 300px;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            overflow-y: auto;
+        }
+
+        .notification-box h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .notification {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+        }
+
+        /* Second Section (Search Bar) */
+        .second-section {
+    text-align: center;
+    margin: 30px;
+}
+
+.search-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-bar {
+    width: 50%;
+    padding: 15px 20px;
+    font-size: 18px;
+    border: 1px solid #555;  /* Dark border */
+    border-radius: 30px;  /* Rounded corners */
+    outline: none;
+    color: #555;
+}
+
+.search-bar::placeholder {
+    color: #888; /* Placeholder color */
+}
+
+.search-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #333; /* Dark button background */
+    color: white;
+    border: none;
+    border-radius: 30px;  /* Rounded button */
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: #555; /* Slightly lighter dark color on hover */
+}
+
+
+
+    </style>    
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-left">
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+            </div>
+            <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="profile.html">My Profile</a>
+                <a href="job.html">Jobs</a>
+                <a href="interview.html">Interviews</a>
+                <a href="results.html">Results</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="index.html" style="color: white;">Logout</a>
+            <div class="profile-icon">
+                <img src="profile.png" alt="Profile">
+            </div>
+        </div>
+    </div>
+
+    <!-- First Section -->
+    <div class="first-section">
+        <div class="notification-box">
+            <h2>Closing Soon Applications</h2>
+            <div class="notification">Google SWE Internship application closing soon - Last date to apply is Feb 1, 2025</div>
+            <div class="notification">Amazon SDE Internship closing soon - Last date to apply is Jan 15, 2025</div>
+            <div class="notification">Microsoft AI Internship closing soon - Last date to apply is Dec 30, 2024</div>
+        </div>
+        <div class="image-box">
+            <img src="gitam.png" alt="Job Portal Image">
+        </div>
+    </div>
+
+    <!-- Second Section (Search Bar) -->
+    <div class="second-section">
+        <form action="searchjob.html" method="GET" class="search-bar-container">
+            <input type="text" name="job" placeholder="Search for jobs..." class="search-bar" required>
+            <button type="submit" class="search-btn">Search</button>
+        </form>
+    </div>
+    
+</body>
+</html>

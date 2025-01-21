@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claysys Job Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ecdac0;
+            margin: 0;
+            padding: 0;
+        }
+        /* Navigation Bar */
+        .navbar {
+            background-color: rgba(2, 113, 106, 255); /* Green */
+            padding: 10px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            font-size: 18px;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(2, 113, 106, 0.8);  /* Darker green when hovered */
+            border-radius: 5px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-icon img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        aside {
+            flex: 1 1 25%;
+            background-color: #fff;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        section {
+            flex: 1 1 70%;
+        }
+        .job-card {
+            background-color: #fff;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            color: #007bff;
+            text-decoration: none;
+            border: 1px solid #007bff;
+            border-radius: 3px;
+            text-align: center;
+        }
+        .btn:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+        footer {
+            background-color: #f1f1f1;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        footer ul li {
+            display: inline;
+            margin: 0 0.5rem;
+        }
+        footer ul li a {
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-left">
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+            </div>
+            <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="profile.html">My Profile</a>
+                <a href="job.html">Jobs</a>
+                <a href="interview.html">Interviews</a>
+                <a href="results.html">Results</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="index.html" style="color: white;">Logout</a>
+            <div class="profile-icon">
+                <img src="profile.png" alt="Profile">
+            </div>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="row">
+            <!-- Filter Section -->
+            <aside>
+                <h5>Apply Filters</h5>
+                <form>
+                    <div>
+                        <label for="search">Search</label>
+                        <input type="text" id="search" placeholder="Search" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;">
+                    </div>
+                    <div>
+                        <label>Categories</label>
+                        <div>
+                            <div>
+                                <input type="checkbox" id="category1">
+                                <label for="category1">Software Development</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="category2">
+                                <label for="category2">Data Science</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="category3">
+                                <label for="category3">Web Development</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Search</button>
+                </form>
+            </aside>
+
+            <!-- Job Listings Section -->
+            <section>
+                <div class="job-card">
+                    <h5>Software Engineer</h5>
+                    <p>
+                        <strong>Company:</strong> Google<br>
+                        <strong>Category:</strong> Software Development<br>
+                        <strong>Location:</strong> Kochi<br>
+                        <strong>Salary:</strong> ₹45,000.00
+                    </p>
+                    <a href="#" class="btn">Details</a>
+                </div>
+
+                <div class="job-card">
+                    <h5>Technical Support</h5>
+                    <p>
+                        <strong>Company:</strong> Google<br>
+                        <strong>Category:</strong> Software Development<br>
+                        <strong>Location:</strong> Kottayam<br>
+                        <strong>Salary:</strong> ₹98,787.00
+                    </p>
+                    <a href="#" class="btn">Details</a>
+                </div>
+
+                <div class="job-card">
+                    <h5>Python Developer</h5>
+                    <p>
+                        <strong>Company:</strong> Twitter<br>
+                        <strong>Category:</strong> Data Science<br>
+                        <strong>Location:</strong> Kochi<br>
+                        <strong>Salary:</strong> ₹12,000.00
+                    </p>
+                    <a href="#" class="btn">Details</a>
+                </div>
+
+                <div class="job-card">
+                    <h5>ASP.NET C# Developer</h5>
+                    <p>
+                        <strong>Company:</strong> MICRO<br>
+                        <strong>Category:</strong> Web Development<br>
+                        <strong>Location:</strong> Goa<br>
+                        <strong>Salary:</strong> ₹45,000.00
+                    </p>
+                    <a href="#" class="btn">Details</a>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

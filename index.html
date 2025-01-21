@@ -1,0 +1,138 @@
+<html>
+<head>
+    <title>Login</title>
+    <style>
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('images.jpeg') no-repeat center center;
+    background-size: cover;  /* Ensures the image covers the entire screen */
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-di rection: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: #007B33;
+        }
+
+        input[type="text"], 
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #f8f8f8;
+            font-size: 16px;
+        }
+
+        input:focus {
+            border-color: #007B33;
+            outline: none;
+        }
+
+        .login-btn {
+            background-color: #007B33;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: #005f27;
+        }
+
+        .forgot-password {
+            margin-top: 15px;
+        }
+
+        .forgot-password a {
+            color: #007B33;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .signup-link {
+            margin-top: 20px;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .signup-link a {
+            color: #007B33;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Login Container -->
+    <div class="login-container">
+        <h2>InternG Login</h2>
+        <div class="form-group">
+            <input type="text" id="username" placeholder="Username or Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button class="login-btn" onclick="validateLogin()">Login</button>
+        </div>
+        <div class="forgot-password">
+            <a href="signup.html">Forgot your password?</a>
+        </div>
+        <div class="signup-link">
+            <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+        </div>
+    </div>
+
+    <script>
+        function validateLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (!username || !password) {
+                alert("Please fill out all fields!");
+                return;
+            }
+
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long!");
+                return;
+            }
+
+            window.location.href = "home.html";  // Replace with your desired page
+        }
+    </script>
+</body>
+</html>

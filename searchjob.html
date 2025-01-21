@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Search Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ecdac0;
+            margin: 0;
+            padding: 0;
+        }
+        /* Navigation Bar */
+        .navbar {
+            background-color: rgba(2, 113, 106, 255); /* Green */
+            padding: 10px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            font-size: 18px;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(2, 113, 106, 0.8);  /* Darker green when hovered */
+            border-radius: 5px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-icon img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background-color: #fff;
+            padding: 2rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            margin-bottom: 1rem;
+        }
+        .job-card {
+            border: 1px solid #ddd;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .job-card h3 {
+            margin: 0 0 1rem;
+            font-size: 1.5rem;
+        }
+        .job-card p {
+            margin: 0.5rem 0;
+        }
+        .job-card button {
+            background-color: #343a40;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .job-card button:hover {
+            background-color: #495057;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-left">
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+            </div>
+            <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="profile.html">My Profile</a>
+                <a href="job.html">Jobs</a>
+                <a href="interview.html">Interviews</a>
+                <a href="results.html">Results</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="index.html" style="color: white;">Logout</a>
+            <div class="profile-icon">
+                <img src="profile.png" alt="Profile">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Search Results -</h2>
+        <div class="job-card">
+            <h3>Student Trainee</h3>
+            <p><strong>Category:</strong> Software R&D</p>
+            <p><strong>Company:</strong> <span id="companyName">Samsung</span></p>
+            <p><strong>Location:</strong> Visakapatnam</p>
+            <p><strong>Salary:</strong> Rs. 10,000 per Month</p>
+            <p><strong>Job Description:</strong></p>
+            <p>
+                The selected candidate(s) would be primarily working on Software R&D projects and they will 
+                be further mapped to CoEs based on their interest and business requirements. 
+                Academic Eligibility - Required: 7.5 CGPA
+            </p>
+            <button>Apply</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to get job name from URL parameter
+        function getJobName() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('job') || 'Samsung'; // Default to Samsung if no job name provided
+        }
+
+        // Set the job name dynamically
+        document.getElementById('companyName').innerText = getJobName();
+    </script>
+</body>
+</html>

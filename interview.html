@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interviews</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ecdac0; /* Light beige background */
+        }
+        /* Navigation Bar */
+        .navbar {
+            background-color: rgba(2, 113, 106, 255); /* Green */
+            padding: 10px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            font-size: 18px;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(2, 113, 106, 0.8);  /* Darker green when hovered */
+            border-radius: 5px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-icon img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #2a3d34; /* Dark green for the header */
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #ffffff; /* White background for the table */
+        }
+
+        th, td {
+            border: 2px solid #2a3d34; /* Bold dark green borders */
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #ffffff;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9; /* Light grey for even rows */
+        }
+
+        tr:hover {
+            background-color: #d1e4d3; /* Light green background when hovered */
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-left">
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+            </div>
+            <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="profile.html">My Profile</a>
+                <a href="job.html">Jobs</a>
+                <a href="interview.html">Interviews</a>
+                <a href="results.html">Results</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="index.html" style="color: white;">Logout</a>
+            <div class="profile-icon">
+                <img src="profile.png" alt="Profile">
+            </div>
+        </div>
+    </div>
+    <h1>Interviews</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Sr. No.</th>
+                <th>Job Title</th>
+                <th>Company</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Summer Analyst</td>
+                <td>Capgemini</td>
+                <td>2024-10-15</td>
+                <td>2:00 pm</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Student Trainee</td>
+                <td>Vaishnav Technologies</td>
+                <td>2025-01-02</td>
+                <td>9:00 am</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
