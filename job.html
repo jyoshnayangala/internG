@@ -11,65 +11,53 @@
             margin: 0;
             padding: 0;
         }
-        /* Navigation Bar */
         .navbar {
-            background-color: rgba(2, 113, 106, 255); /* Green */
+            background-color: rgba(2, 113, 106, 255);
             padding: 10px 30px;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
-
         .nav-left {
             display: flex;
             align-items: center;
             gap: 20px;
         }
-
         .logo img {
             width: 70px;
             height: 70px;
             border-radius: 50%;
         }
-
         .nav-links {
             display: flex;
             gap: 20px;
         }
-
         .navbar a {
             color: white;
             text-decoration: none;
             padding: 14px 20px;
             font-size: 18px;
         }
-
         .navbar a:hover {
-            background-color: rgba(2, 113, 106, 0.8);  /* Darker green when hovered */
+            background-color: rgba(2, 113, 106, 0.8);
             border-radius: 5px;
         }
-
         .nav-right {
             display: flex;
             align-items: center;
             gap: 20px;
         }
-
         .profile-icon img {
             width: 40px;
             height: 40px;
             border-radius: 50%;
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 1rem;
-        }
-        .row {
             display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
+            gap: 1.5rem;
         }
         aside {
             flex: 1 1 25%;
@@ -118,9 +106,17 @@
             text-decoration: none;
             color: #007bff;
         }
+        input, select {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
     </style>
 </head>
 <body>
+
     <div class="navbar">
         <div class="nav-left">
             <div class="logo">
@@ -129,6 +125,7 @@
             <div class="nav-links">
                 <a href="home.html">Home</a>
                 <a href="profile.html">My Profile</a>
+                <a href="parttime.html">Part Time</a>
                 <a href="job.html">Jobs</a>
                 <a href="interview.html">Interviews</a>
                 <a href="results.html">Results</a>
@@ -143,38 +140,28 @@
     </div>
 
     <main class="container">
-        <div class="row">
-            <!-- Filter Section -->
-            <aside>
-                <h5>Apply Filters</h5>
-                <form>
-                    <div>
-                        <label for="search">Search</label>
-                        <input type="text" id="search" placeholder="Search" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;">
-                    </div>
-                    <div>
-                        <label>Categories</label>
-                        <div>
-                            <div>
-                                <input type="checkbox" id="category1">
-                                <label for="category1">Software Development</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="category2">
-                                <label for="category2">Data Science</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="category3">
-                                <label for="category3">Web Development</label>
-                            </div>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Search</button>
-                </form>
-            </aside>
+        <!-- Sidebar -->
+        <aside>
+            <h5>Post a Job</h5>
+            <form id="jobForm">
+                <input type="text" id="jobTitle" placeholder="Job Title" required>
+                <input type="text" id="companyName" placeholder="Company Name" required>
+                <select id="category" required>
+                    <option value="">Select Category</option>
+                    <option value="Software Development">Software Development</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="Web Development">Web Development</option>
+                </select>
+                <input type="text" id="location" placeholder="Location" required>
+                <input type="text" id="salary" placeholder="Salary" required>
+                <button type="submit" class="btn" style="width: 100%;">Post Job</button>
+            </form>
+        </aside>
 
-            <!-- Job Listings Section -->
-            <section>
+        <!-- Job Listings Section -->
+        <section>
+            <h2>Job Listings</h2>
+            <div id="jobListings">
                 <div class="job-card">
                     <h5>Software Engineer</h5>
                     <p>
@@ -218,8 +205,33 @@
                     </p>
                     <a href="#" class="btn">Details</a>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
     </main>
+
+    <script>
+        document.getElementById("jobForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let title = document.getElementById("jobTitle").value;
+            let company = document.getElementById("companyName").value;
+            let category = document.getElementById("category").value;
+            let location = document.getElementById("location").value;
+            let salary = document.getElementById("salary").value;
+
+            let jobCard = `<div class="job-card">
+                <h5>${title}</h5>
+                <p><strong>Company:</strong> ${company}<br>
+                <strong>Category:</strong> ${category}<br>
+                <strong>Location:</strong> ${location}<br>
+                <strong>Salary:</strong> ${salary}</p>
+                <a href="#" class="btn">Details</a>
+            </div>`;
+
+            document.getElementById("jobListings").innerHTML += jobCard;
+            this.reset();
+        });
+    </script>
+
 </body>
 </html>

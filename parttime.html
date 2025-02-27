@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part-Time Jobs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ecdac0;
+        }
+
+        .navbar {
+            background-color: #02716a;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-icon img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .container {
+            width: 80%;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-bar-container, .post-job-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .search-bar, .job-title, .job-description {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            outline: none;
+            margin-right: 10px;
+        }
+
+        .search-btn, .post-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #02716a;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .job-listing {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .job-listing h2 {
+            color: #333;
+        }
+
+        .apply-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #02716a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .apply-btn:hover {
+            background-color: #025c56;
+        }
+    </style>
+    <script>
+        function applyJob() {
+            alert("Applied successfully!");
+        }
+
+        function postJob() {
+            let title = document.getElementById("job-title").value;
+            let description = document.getElementById("job-description").value;
+            
+            if (title && description) {
+                let jobList = document.getElementById("job-list");
+                let newJob = document.createElement("div");
+                newJob.classList.add("job-listing");
+                newJob.innerHTML = `<h2>${title}</h2><p>${description}</p><button class='apply-btn' onclick='applyJob()'>Apply Now</button>`;
+                jobList.appendChild(newJob);
+                
+                document.getElementById("job-title").value = "";
+                document.getElementById("job-description").value = "";
+            } else {
+                alert("Please enter both job title and description.");
+            }
+        }
+    </script>
+</head> 
+<body>
+    <div class="navbar">
+        <div class="nav-left">
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+            </div>
+            <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="profile.html">My Profile</a>
+                <a href="parttime.html">Part Time</a>
+                <a href="job.html">Jobs</a>
+                <a href="interview.html">Interviews</a>
+                <a href="results.html">Results</a>  
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="index.html" style="color: white;">Logout</a>
+            <div class="profile-icon">
+                <img src="profile.png" alt="Profile">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Post a Part-Time Job</h1>
+    </br>
+        <div class="post-job-container">
+            <input type="text" id="job-title" placeholder="Job Title" class="job-title" required>
+            <input type="text" id="job-description" placeholder="Job Description" class="job-description" required>
+            <button onclick="postJob()" class="post-btn">Post Job</button>
+        </div>
+
+        <h1>Find Part-Time Jobs</h1>
+    </br>
+        <form action="searchparttime.html" method="GET" class="search-bar-container">
+            <input type="text" name="job" placeholder="Search for part-time jobs..." class="search-bar" required>
+            <button type="submit" class="search-btn">Search</button>
+        </form>
+
+        <div id="job-list">
+            <div class="job-listing">
+                <h2>Online Tutor</h2>
+                <p>Teach students online in your preferred subject. Flexible hours and good pay.</p>
+                <button class="apply-btn" onclick="applyJob()">Apply Now</button>
+            </div>
+
+            <div class="job-listing">
+                <h2>Content Writer</h2>
+                <p>Write articles and blogs on various topics. Work remotely and earn per article.</p>
+                <button class="apply-btn" onclick="applyJob()">Apply Now</button>
+            </div>
+
+            <div class="job-listing">
+                <h2>Web Developer</h2>
+                <p>Design, build, and maintain web applications. Flexible working hours.</p>
+                <button class="apply-btn" onclick="applyJob()">Apply Now</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
